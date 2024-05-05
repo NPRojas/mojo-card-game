@@ -6,12 +6,20 @@ const sequalize = require("../db/config");
 const { DataTypes } = require("sequelize");
 
 // use the define method to create the model 
-const User = sequalize.define("user", {
-    username: {
+const Attack = sequalize.define("attack", {
+    title: {
         type: DataTypes.STRING,
+        allowNull: false
+    },
+    mojoCost: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    staminaCost: {
+        type: DataTypes.INTEGER,
         allowNull: false
     }
 });
 
 // export the class
-module.exports = User;
+module.exports = Attack;
