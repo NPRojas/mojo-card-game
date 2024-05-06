@@ -7,3 +7,5 @@ const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: "./mojo-database.sqlite"
 });
+
+module.exports = sequelize;
