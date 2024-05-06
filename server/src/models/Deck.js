@@ -8,7 +8,7 @@ const Deck = sequalize.define("deck", {
     },
     xp: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true
     }
 });
 

@@ -1,4 +1,4 @@
-const { db } = require('./config')
+const  db  = require('./config.js')
 const { User } = require('../models')
 
 function randInt (a, b) {
@@ -13,11 +13,12 @@ async function seed () {
     { username: 'trinity' },
     { username: 'mr_spoon' }
   ])
-
+console.log("CREATING DECKS");
   const deckNames = ['snake pit', 'the matrix', 'Doom Burger']
   const decks = await Promise.all(
     users.map((u, i) => u.createDeck({ name: deckNames[i] }))
   )
+console.log("DECKS CREATED");
 
   const cards = [
     {
@@ -51,7 +52,7 @@ async function seed () {
       imgUrl: 'http://localhost:5000/img/alaric-flamecaller.jpg'
     }
   ]
-
+console.log("CREATING CARDS");
   const cardPromises = []
   for (const deck of decks) {
     const cardCount = randInt(2, 5)
@@ -61,6 +62,7 @@ async function seed () {
     }
   }
   await Promise.all(cardPromises)
+  console.log("CARDS CREATED");
 
   console.log('Database seeded')
 }
