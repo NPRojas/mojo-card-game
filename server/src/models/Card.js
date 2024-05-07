@@ -16,7 +16,7 @@ const Card = sequalize.define("card", {
     },
     imgURL: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     }
 });
 
